@@ -16,11 +16,6 @@ public class ProductDbController {
         this.productDbService = productDbService;
     }
 
-    @GetMapping("/test")
-    public String test() {
-        return "Controller OK";
-    }
-
     @GetMapping
     public List<ProductDb> getAllProducts() {
         return productDbService.getAllProducts();

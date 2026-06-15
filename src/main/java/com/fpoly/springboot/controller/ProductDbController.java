@@ -3,6 +3,7 @@ package com.fpoly.springboot.controller;
 import com.fpoly.springboot.model.ProductDb;
 import com.fpoly.springboot.service.ProductDbService;
 
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.data.domain.Page;
@@ -24,7 +25,7 @@ public class ProductDbController {
     }
 
     @PostMapping
-    public ProductDb addProduct(@RequestBody ProductDb product) {
+    public ProductDb addProduct(@Valid @RequestBody ProductDb product) {
         return productDbService.addProduct(product);
     }
 

@@ -68,10 +68,4 @@ public class ProductController {
 
         return "Khong tim thay san pham";
     }
-    @GetMapping("/count-by-category")
-public ResponseEntity<List<Object[]>> countByCategory() {
-
-    return ResponseEntity.ok(
-            productService.countProductsByCategory());
-}
 }

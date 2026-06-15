@@ -1,6 +1,7 @@
 CREATE DATABASE FpolySpringBoot
 go
-DROP TABLE products;
+USE FpolySpringBoot;
+GO
 
 CREATE TABLE categories (
     id INT IDENTITY(1,1) PRIMARY KEY,

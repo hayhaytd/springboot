@@ -30,18 +30,19 @@ public class ProductDbController {
     }
 
     @GetMapping("/page")
-public ResponseEntity<Page<ProductDb>> getProductsPage(
-        @RequestParam(defaultValue = "0") int page,
-        @RequestParam(defaultValue = "5") int size,
-        @RequestParam(defaultValue = "id") String sortBy) {
+    public ResponseEntity<Page<ProductDb>> getProductsPage(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "5") int size,
+            @RequestParam(defaultValue = "id") String sortBy) {
 
-    return ResponseEntity.ok( productDbService.getProductsWithPagination(page,size,sortBy));
-}
+        return ResponseEntity.ok( productDbService.getProductsWithPagination(page,size,sortBy));
+    }
 
-    @GetMapping("/count-by-category")
-    public ResponseEntity<List<Object[]>> countByCategory() {
+        @GetMapping("/count-by-category")
+        public ResponseEntity<List<Object[]>> countByCategory() {
 
-    return ResponseEntity.ok(
-            productDbService.countProductsByCategory());
-}
+        return ResponseEntity.ok(
+                productDbService.countProductsByCategory());
+    }
+
 }

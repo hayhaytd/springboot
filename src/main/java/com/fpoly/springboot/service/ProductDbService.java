@@ -9,8 +9,10 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import java.util.List;
 import java.util.Optional;
+import lombok.extern.slf4j.Slf4j;
 
 @Service
+@Slf4j
 public class ProductDbService {
 
     private final ProductDbRepository productDbRepository;
@@ -22,14 +24,17 @@ public class ProductDbService {
     }
 
     public List<ProductDb> getAllProducts() {
+        log.info("Lấy danh sách sản phẩm");
         return productDbRepository.findAll();
     }
 
     public Optional<ProductDb> getProductById(Long id) {
+        log.info("Tìm sản phẩm id={}", id);
         return productDbRepository.findById(id);
     }
 
     public ProductDb addProduct(ProductDb product) {
+        log.info("Thêm sản phẩm {}", product.getName());
         return productDbRepository.save(product);
     }
 
@@ -42,5 +47,7 @@ public class ProductDbService {
     public List<Object[]> countProductsByCategory() {
     return productDbRepository.countProductsByCategory();
     }
+
     
+
 }

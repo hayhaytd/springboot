@@ -2,6 +2,8 @@ package com.fpoly.springboot.controller;
 
 import com.fpoly.springboot.model.Product;
 import com.fpoly.springboot.service.ProductService;
+
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
